@@ -10,7 +10,8 @@ LPARAMETERS pMenuConsulta
 	
 && *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*	
 && DEFINIÇÕES DE PROCEDURES LOCAIS
-			
+*SET PATH TO C:\COOP\VFP\SISCOLEGIO\CADASTRO\ALUNO\;C:\COOP\VFP\SISCOLEGIO\CADASTRO\FUNCIONARIO\
+
 	
 && *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*	
 && DEFINIÇÃO DOS MENUS
@@ -21,18 +22,31 @@ LPARAMETERS pMenuConsulta
 && O restante das definições já utilizadas, continuam da mesma forma.
 	
 	&& DEFINIÇAO DO MENU PRINCIPAL
-    Public array aMenuCadastro[3,3]
+    Public array aMenuCadastro[5,3]
     xI = 0
     
     xI = xI + 1
    	aMenuCadastro[xI,1] = 'cadastro de [A]lunos'
 	aMenuCadastro[xI,2] = ''
-	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\ALUNO\ALUNO.APP")'
-			
+	aMenuCadastro[xI,3] = 'FORM->frmalunocadastro'
+	*aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\ALUNO\ALUNO.APP")'
+	
+	xI = xI + 1
+   	aMenuCadastro[xI,1] = 'cadastro de [P]rofessores'
+	aMenuCadastro[xI,2] = ''
+	aMenuCadastro[xI,3] = 'FORM->frmprofessorcadastro'
+	
+    xI = xI + 1
+   	aMenuCadastro[xI,1] = 'cadastro de [F]uncionarios'
+	aMenuCadastro[xI,2] = ''
+	aMenuCadastro[xI,3] = 'FORM->frmfuncionariocadastro'
+	*aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\FUNCIONARIO\FUNCIONARIO.APP")'
+	
     xI = xI + 1
    	aMenuCadastro[xI,1] = 'cadastro de [D]isciplinas'
 	aMenuCadastro[xI,2] = ''
-	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\DISCIPLINA\DISCIPLINA.APP")'
+	aMenuCadastro[xI,3] = 'FORM->frmdisciplinacadastro'
+	*aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\DISCIPLINA\DISCIPLINA.APP")'
 	
 	xI = xI + 1
    	aMenuCadastro[xI,1] = 'cadastros [G]erais'

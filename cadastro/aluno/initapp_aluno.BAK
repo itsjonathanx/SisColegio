@@ -27,7 +27,7 @@ LPARAMETERS pMenuConsulta
     xI = xI + 1
    	aMenuCadAluno[xI,1] = 'cadastrar [A]lunos'
 	aMenuCadAluno[xI,2] = ''
-	aMenuCadAluno[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\ALUNO\ALUNO.APP")'
+	aMenuCadAluno[xI,3] = 'FORM->frmalunocadastro'
 			
 	
 	&& CRIA O MENU PADRAO 

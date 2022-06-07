@@ -21,18 +21,19 @@ LPARAMETERS pMenuConsulta
 && O restante das definições já utilizadas, continuam da mesma forma.
 	
 	&& DEFINIÇAO DO MENU PRINCIPAL
-    Public array aMenuAluno[1,3]
+    Public array aMenuFuncionario[1,3]
     xI = 0
     
     xI = xI + 1
-   	aMenuAluno[xI,1] = 'cadastrar [A]lunos'
-	aMenuAluno[xI,2] = ''
-	aMenuAluno[xI,3] = 'FORM->frmalunocadastro'
+   	aMenuFuncionario[xI,1] = 'Cadastrar [F]uncionario'
+	aMenuFuncionario[xI,2] = ''
+	aMenuFuncionario[xI,3] = 'FORM->frmfuncionariocadastro'
 			
+
 	
 	&& CRIA O MENU PADRAO 
 	IF !pMenuConsulta
-		xCriar = "Criar_Menu( @aMenuAluno )"
+		xCriar = "Criar_Menu( @aMenuFuncionario )"
 		&xCriar.
 	ELSE
 		&& SE O APP FOI CHAMADO COM OPCAO DE MOSTRAR APENAS O MENU DE CONSULTAS, 
@@ -41,7 +42,7 @@ LPARAMETERS pMenuConsulta
 	ENDIF
     
     && LIMPA AS MATRIZES DA MEMÓRIA
-    RELEASE aMenuAluno
+    RELEASE aMenuFuncionario
     
 && *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*	
 && DEFINIÇÃO DA FUNÇÃO QUE CARREGA OS RELATÓRIOS DISPONÍVEIS PARA O MÓDULO, E VERIFICA PERMISSÕES.
