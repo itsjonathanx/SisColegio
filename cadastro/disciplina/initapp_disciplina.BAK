@@ -25,12 +25,10 @@ LPARAMETERS pMenuConsulta
     xI = 0
     
     xI = xI + 1
-   	aMenuDisciplina[xI,1] = ''
+   	aMenuDisciplina[xI,1] = 'cadastrar disciplina'
 	aMenuDisciplina[xI,2] = ''
-	aMenuDisciplina[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\ALUNO\ALUNO.APP")'
+	aMenuDisciplina[xI,3] = 'FORM->frmclassdisciplinacadastro'
 			
-	
-	
 	
 	&& CRIA O MENU PADRAO 
 	IF !pMenuConsulta

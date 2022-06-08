@@ -25,12 +25,10 @@ LPARAMETERS pMenuConsulta
     xI = 0
     
     xI = xI + 1
-   	aMenuDisciplina[xI,1] = ''
+   	aMenuDisciplina[xI,1] = 'cadastrar disciplina'
 	aMenuDisciplina[xI,2] = ''
-	aMenuDisciplina[xI,3] = ''
+	aMenuDisciplina[xI,3] = 'FORM->frmdisciplinacadastro'
 			
-	
-	
 	
 	&& CRIA O MENU PADRAO 
 	IF !pMenuConsulta
