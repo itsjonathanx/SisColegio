@@ -44,6 +44,11 @@ LPARAMETERS pMenuConsulta
 	aMenuCadastro[xI,2] = ''
 	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\DISCIPLINA\DISCIPLINA.APP")'
 	
+    xI = xI + 1
+   	aMenuCadastro[xI,1] = 'cadastro de [C]ursos'
+	aMenuCadastro[xI,2] = ''
+	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\CURSOS\CURSOS.APP")'	
+	
 	xI = xI + 1
    	aMenuCadastro[xI,1] = 'cadastros [G]erais'
 	aMenuCadastro[xI,2] = ''
@@ -51,7 +56,7 @@ LPARAMETERS pMenuConsulta
 	
 	
 	&& CADASTROS GERAIS
-	Public array aMenuCadGerais[3,3]
+	Public array aMenuCadGerais[4,3]
 
 	xI = 1
    	aMenuCadGerais[xI,1] = 'cadastrar tipo [P]arentesco'
@@ -67,6 +72,11 @@ LPARAMETERS pMenuConsulta
    	aMenuCadGerais[xI,1] = 'cadastrar tipo a[C]ompanhamento'
 	aMenuCadGerais[xI,2] = ''
 	aMenuCadGerais[xI,3] = 'FORM->frmtipoacompcadastro'
+	
+	xI = xI + 1
+   	aMenuCadGerais[xI,1] = 'cadastrar classificação de [D]isciplina'
+	aMenuCadGerais[xI,2] = ''
+	aMenuCadGerais[xI,3] = 'FORM->frmclassdisciplinacadastro'
 	
 	&& CRIA O MENU PADRAO 
 	IF !pMenuConsulta
