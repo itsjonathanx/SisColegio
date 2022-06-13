@@ -21,7 +21,7 @@ LPARAMETERS pMenuConsulta
 && O restante das definições já utilizadas, continuam da mesma forma.
 	
 	&& DEFINIÇAO DO MENU PRINCIPAL
-    Public array aMenuCursos[1,3]
+    Public array aMenuCursos[3,3]
     xI = 0
     
     xI = xI + 1
@@ -29,9 +29,17 @@ LPARAMETERS pMenuConsulta
 	aMenuCursos[xI,2] = ''
 	aMenuCursos[xI,3] = 'FORM->frmcursocadastro'
 			
+    xI = xI + 1
+   	aMenuCursos[xI,1] = 'organização curricular'
+	aMenuCursos[xI,2] = ''
+	aMenuCursos[xI,3] = 'FORM->frmorganizacaocurricular'	 
 	
+    xI = xI + 1
+   	aMenuCursos[xI,1] = 'cadastrar turma'
+	aMenuCursos[xI,2] = ''
+	aMenuCursos[xI,3] = 'FORM->frmturmacadastro'
 	
-	
+		
 	&& CRIA O MENU PADRAO 
 	IF !pMenuConsulta
 		xCriar = "Criar_Menu( @aMenuCursos )"

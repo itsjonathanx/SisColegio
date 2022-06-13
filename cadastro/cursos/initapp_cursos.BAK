@@ -21,15 +21,18 @@ LPARAMETERS pMenuConsulta
 && O restante das definições já utilizadas, continuam da mesma forma.
 	
 	&& DEFINIÇAO DO MENU PRINCIPAL
-    Public array aMenuCursos[1,3]
+    Public array aMenuCursos[2,3]
     xI = 0
     
     xI = xI + 1
    	aMenuCursos[xI,1] = 'cadastrar curso'
 	aMenuCursos[xI,2] = ''
-	aMenuCursos[xI,3] = 'frmcursocadastro'
+	aMenuCursos[xI,3] = 'FORM->frmcursocadastro'
 			
-	
+    xI = xI + 1
+   	aMenuCursos[xI,1] = 'organização curricular'
+	aMenuCursos[xI,2] = ''
+	aMenuCursos[xI,3] = 'FORM->frmorganizacaocurricular'	
 	
 	
 	&& CRIA O MENU PADRAO 
