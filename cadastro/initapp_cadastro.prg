@@ -21,7 +21,7 @@ LPARAMETERS pMenuConsulta
 && O restante das definições já utilizadas, continuam da mesma forma.
 	
 	&& DEFINIÇAO DO MENU PRINCIPAL
-    Public array aMenuCadastro[6,3]
+    Public array aMenuCadastro[7,3]
     xI = 0
     
     xI = xI + 1
@@ -48,6 +48,11 @@ LPARAMETERS pMenuConsulta
    	aMenuCadastro[xI,1] = 'cadastro de [C]ursos'
 	aMenuCadastro[xI,2] = ''
 	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\CURSOS\CURSOS.APP")'	
+	
+    xI = xI + 1
+   	aMenuCadastro[xI,1] = 'cadastro de [G]rade de aula'
+	aMenuCadastro[xI,2] = ''
+	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\GRADEAULA\GRADEAULA.APP")'		
 	
 	xI = xI + 1
    	aMenuCadastro[xI,1] = 'cadastros [G]erais'

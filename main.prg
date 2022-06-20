@@ -86,6 +86,9 @@ PUBLIC PMOD,FlagPrincipal
 *!*	Pra reativar:
 	SET REPORTBEHAVIOR 90
 	
+	&& ESTÁ NO ROTINASISCOLEGIO.PRG
+	SISCOLEGIO_CRIAR_CURSOR_PADRAO() 
+	
 	
 	********************************************
 	&& DEFINIÇÃO DE AMBIENTE
