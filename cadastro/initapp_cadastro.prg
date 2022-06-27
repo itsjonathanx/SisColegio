@@ -28,61 +28,71 @@ LPARAMETERS pMenuConsulta
    	aMenuCadastro[xI,1] = 'cadastro de [A]lunos'
 	aMenuCadastro[xI,2] = ''
 	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\ALUNO\ALUNO.APP")'
-	
-	xI = xI + 1
-   	aMenuCadastro[xI,1] = 'cadastro de [P]rofessores'
-	aMenuCadastro[xI,2] = ''
-	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\PROFESSOR\PROFESSOR.APP")'
-	
+		
     xI = xI + 1
-   	aMenuCadastro[xI,1] = 'cadastro de [F]uncionarios'
+   	aMenuCadastro[xI,1] = 'cadastro de [C]ursos'
 	aMenuCadastro[xI,2] = ''
-	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\FUNCIONARIO\FUNCIONARIO.APP")'
-	
+	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\CURSOS\CURSOS.APP")'	
+		
     xI = xI + 1
    	aMenuCadastro[xI,1] = 'cadastro de [D]isciplinas'
 	aMenuCadastro[xI,2] = ''
 	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\DISCIPLINA\DISCIPLINA.APP")'
 	
     xI = xI + 1
-   	aMenuCadastro[xI,1] = 'cadastro de [C]ursos'
+   	aMenuCadastro[xI,1] = 'cadastro de [F]uncionarios'
 	aMenuCadastro[xI,2] = ''
-	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\CURSOS\CURSOS.APP")'	
-	
+	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\FUNCIONARIO\FUNCIONARIO.APP")'
+
     xI = xI + 1
    	aMenuCadastro[xI,1] = 'cadastro de [G]rade de aula'
 	aMenuCadastro[xI,2] = ''
 	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\GRADEAULA\GRADEAULA.APP")'		
 	
 	xI = xI + 1
-   	aMenuCadastro[xI,1] = 'cadastros [G]erais'
+   	aMenuCadastro[xI,1] = 'cadastro de [P]rofessores'
+	aMenuCadastro[xI,2] = ''
+	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\PROFESSOR\PROFESSOR.APP")'
+
+	xI = xI + 1
+   	aMenuCadastro[xI,1] = 'cadastros gerais'
 	aMenuCadastro[xI,2] = ''
 	aMenuCadastro[xI,3] = 'FUNC->Criar_Menu( @aMenuCadGerais )'
 	
 	
 	&& CADASTROS GERAIS
-	Public array aMenuCadGerais[4,3]
-
-	xI = 1
-   	aMenuCadGerais[xI,1] = 'cadastrar tipo [P]arentesco'
-	aMenuCadGerais[xI,2] = ''
-	aMenuCadGerais[xI,3] = 'FORM->frmparentescocadastro'
+	Public array aMenuCadGerais[6,3]
 	
-	xI = xI + 1
+	xI = 1
    	aMenuCadGerais[xI,1] = 'cadastrar tipo [A]lergia'
 	aMenuCadGerais[xI,2] = ''
 	aMenuCadGerais[xI,3] = 'FORM->frmtipoalergiacadastro'
-		
+
 	xI = xI + 1
    	aMenuCadGerais[xI,1] = 'cadastrar tipo a[C]ompanhamento'
 	aMenuCadGerais[xI,2] = ''
 	aMenuCadGerais[xI,3] = 'FORM->frmtipoacompcadastro'
 	
 	xI = xI + 1
-   	aMenuCadGerais[xI,1] = 'cadastrar classificação de [D]isciplina'
+   	aMenuCadGerais[xI,1] = 'cadastrar tipo de [D]ata'
+	aMenuCadGerais[xI,2] = ''
+	aMenuCadGerais[xI,3] = 'FORM->frmtipodatacadastro'
+	
+	xI = xI + 1
+   	aMenuCadGerais[xI,1] = 'cadastrar classificações de [O]corrências'
+	aMenuCadGerais[xI,2] = ''
+	aMenuCadGerais[xI,3] = 'FORM->frmclassocorrenciacadastro'
+	
+	xI = xI + 1
+   	aMenuCadGerais[xI,1] = 'cadastrar tipo [P]arentesco'
+	aMenuCadGerais[xI,2] = ''
+	aMenuCadGerais[xI,3] = 'FORM->frmparentescocadastro'
+
+	xI = xI + 1
+   	aMenuCadGerais[xI,1] = 'cadastrar classificação de di[S]ciplina'
 	aMenuCadGerais[xI,2] = ''
 	aMenuCadGerais[xI,3] = 'FORM->frmclassdisciplinacadastro'
-	
+
 	&& CRIA O MENU PADRAO 
 	IF !pMenuConsulta
 		xCriar = "Criar_Menu( @aMenuCadastro )"

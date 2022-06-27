@@ -21,7 +21,7 @@ LPARAMETERS pMenuConsulta
 && O restante das definições já utilizadas, continuam da mesma forma.
 	
 	&& DEFINIÇAO DO MENU PRINCIPAL
-    Public array aMenuCadastro[6,3]
+    Public array aMenuCadastro[7,3]
     xI = 0
     
     xI = xI + 1
@@ -49,14 +49,19 @@ LPARAMETERS pMenuConsulta
 	aMenuCadastro[xI,2] = ''
 	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\CURSOS\CURSOS.APP")'	
 	
+    xI = xI + 1
+   	aMenuCadastro[xI,1] = 'cadastro de [G]rade de aula'
+	aMenuCadastro[xI,2] = ''
+	aMenuCadastro[xI,3] = 'FUNC->CHAMATODOS("\COOP\VFP\SISCOLEGIO\CADASTRO\GRADEAULA\GRADEAULA.APP")'		
+	
 	xI = xI + 1
-   	aMenuCadastro[xI,1] = 'cadastros [G]erais'
+   	aMenuCadastro[xI,1] = 'cadastros gerais'
 	aMenuCadastro[xI,2] = ''
 	aMenuCadastro[xI,3] = 'FUNC->Criar_Menu( @aMenuCadGerais )'
 	
 	
 	&& CADASTROS GERAIS
-	Public array aMenuCadGerais[4,3]
+	Public array aMenuCadGerais[6,3]
 
 	xI = 1
    	aMenuCadGerais[xI,1] = 'cadastrar tipo [P]arentesco'
@@ -74,9 +79,19 @@ LPARAMETERS pMenuConsulta
 	aMenuCadGerais[xI,3] = 'FORM->frmtipoacompcadastro'
 	
 	xI = xI + 1
-   	aMenuCadGerais[xI,1] = 'cadastrar classificação de [D]isciplina'
+   	aMenuCadGerais[xI,1] = 'cadastrar classificação de di[S]ciplina'
 	aMenuCadGerais[xI,2] = ''
 	aMenuCadGerais[xI,3] = 'FORM->frmclassdisciplinacadastro'
+
+	xI = xI + 1
+   	aMenuCadGerais[xI,1] = 'cadastrar tipo de [D]ata'
+	aMenuCadGerais[xI,2] = ''
+	aMenuCadGerais[xI,3] = 'FORM->frmtipodatacadastro'
+	
+	xI = xI + 1
+   	aMenuCadGerais[xI,1] = 'cadastrar classificações de [O]corrências'
+	aMenuCadGerais[xI,2] = ''
+	aMenuCadGerais[xI,3] = 'FORM->frmclassocorrenciacadastro'
 	
 	&& CRIA O MENU PADRAO 
 	IF !pMenuConsulta

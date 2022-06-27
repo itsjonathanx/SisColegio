@@ -17,13 +17,13 @@ FUNCTION SISCOLEGIO_CRIAR_CURSOR_PADRAO()
 	CREATE CURSOR cCfDiaSemana(	dia c(1)	,;
 								fds n(1) 	,;	
 								descricao c(30)  ) 
-	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( 1, 1 , "Domingo" ) 
-	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( 2, 0 , "Segunda-feira" ) 
-	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( 3, 0 , "Terça-feira" ) 
-	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( 4, 0 , "Quarta-feira" ) 
-	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( 5, 0 , "Quinta-feira" ) 
-	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( 6, 0 , "Sexta-feira" ) 
-	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( 7, 1 , "Sábado" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "1", 1 , "Domingo" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "2", 0 , "Segunda-feira" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "3", 0 , "Terça-feira" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "4", 0 , "Quarta-feira" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "5", 0 , "Quinta-feira" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "6", 0 , "Sexta-feira" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "7", 1 , "Sábado" ) 
 	
 	
 
