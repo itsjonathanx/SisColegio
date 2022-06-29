@@ -27,7 +27,7 @@ LPARAMETERS pMenuConsulta
     xI = xI + 1
    	aMenuLanccurricular[xI,1] = 'Lançamento de prenseça diária'
 	aMenuLanccurricular[xI,2] = ''
-	aMenuLanccurricular[xI,3] = ''
+	aMenuLanccurricular[xI,3] = 'FORM->frmlancpresencadiaria'
 			
 	
 	

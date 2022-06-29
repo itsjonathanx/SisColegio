@@ -21,20 +21,20 @@ LPARAMETERS pMenuConsulta
 && O restante das definições já utilizadas, continuam da mesma forma.
 	
 	&& DEFINIÇAO DO MENU PRINCIPAL
-    Public array aMenuDisciplina[1,3]
+    Public array aMenuLanccurricular[1,3]
     xI = 0
     
     xI = xI + 1
-   	aMenuDisciplina[xI,1] = ''
-	aMenuDisciplina[xI,2] = ''
-	aMenuDisciplina[xI,3] = ''
+   	aMenuLanccurricular[xI,1] = 'Lançamento de prenseça diária'
+	aMenuLanccurricular[xI,2] = ''
+	aMenuLanccurricular[xI,3] = 'FROM->frmlancpresencadiaria'
 			
 	
 	
 	
 	&& CRIA O MENU PADRAO 
 	IF !pMenuConsulta
-		xCriar = "Criar_Menu( @aMenuDisciplina )"
+		xCriar = "Criar_Menu( @aMenuLanccurricular )"
 		&xCriar.
 	ELSE
 		&& SE O APP FOI CHAMADO COM OPCAO DE MOSTRAR APENAS O MENU DE CONSULTAS, 
@@ -43,7 +43,7 @@ LPARAMETERS pMenuConsulta
 	ENDIF
     
     && LIMPA AS MATRIZES DA MEMÓRIA
-    RELEASE aMenuDisciplina
+    RELEASE aMenuLanccurricular
     
 && *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*	
 && DEFINIÇÃO DA FUNÇÃO QUE CARREGA OS RELATÓRIOS DISPONÍVEIS PARA O MÓDULO, E VERIFICA PERMISSÕES.
