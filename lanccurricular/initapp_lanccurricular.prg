@@ -21,15 +21,18 @@ LPARAMETERS pMenuConsulta
 && O restante das definições já utilizadas, continuam da mesma forma.
 	
 	&& DEFINIÇAO DO MENU PRINCIPAL
-    Public array aMenuLanccurricular[1,3]
+    Public array aMenuLanccurricular[2,3]
     xI = 0
     
     xI = xI + 1
    	aMenuLanccurricular[xI,1] = 'Lançamento de prenseça diária'
 	aMenuLanccurricular[xI,2] = ''
 	aMenuLanccurricular[xI,3] = 'FORM->frmlancpresencadiaria'
-			
-	
+		
+    xI = xI + 1
+   	aMenuLanccurricular[xI,1] = 'Lançamento de prenseça e conteúdo'
+	aMenuLanccurricular[xI,2] = ''
+	aMenuLanccurricular[xI,3] = 'FORM->frmlancpresencaconteudo'	
 	
 	
 	&& CRIA O MENU PADRAO 
