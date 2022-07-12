@@ -8,8 +8,28 @@
 * ULTIMA ALTERAÇÃO....: 11/2021
 **********************************************************************************************************************************
 
-
 && FUNÇÃO PARA GRAVAR O CABEÇALHO DOS RELATÓRIOS
+&& *************************************************************************************************************
+FUNCTION SISCOLEGIO_CARREGAR_TURMAS()
+&& *************************************************************************************************************
+	
+	xAno = ALLTRIM(STR(YEAR(DATE())))
+	
+	SELECT("SCG_CAD_TURMA")
+	SELECT * FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.codano = xAno INTO CURSOR "cCfTurma"
+
+
+	SELECT("SCG_CAD_TURMA")
+	SELECT SCG_CAD_TURMA.*	,;
+			SCG_CAD_TURMA.ANO+SCG_CAD_TURMA.NUMERO AS ANONUMERO	;
+		FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.ATIVO=1 AND SCG_CAD_TURMA.codano = xAno AND !DELETED() ORDER BY SCG_CAD_TURMA.cursoturma  INTO CURSOR "cCfCadTurma"
+		
+&& *************************************************************************************************************
+ENDFUNC
+&& *************************************************************************************************************
+
+
+&& FUNÇÃO PARA CARREGAR OS DIAS DA SEMANA NA COMBO BOX
 && *************************************************************************************************************
 FUNCTION SISCOLEGIO_CRIAR_CURSOR_PADRAO()
 && *************************************************************************************************************
@@ -25,8 +45,6 @@ FUNCTION SISCOLEGIO_CRIAR_CURSOR_PADRAO()
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "6", 0 , "Sexta-feira" ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "7", 1 , "Sábado" ) 
 	
-	
-
 && *************************************************************************************************************
 ENDFUNC
 && *************************************************************************************************************

@@ -8,15 +8,33 @@
 * ULTIMA ALTERAÇÃO....: 11/2021
 **********************************************************************************************************************************
 
-
 && FUNÇÃO PARA GRAVAR O CABEÇALHO DOS RELATÓRIOS
+&& *************************************************************************************************************
+FUNCTION SISCOLEGIO_CARREGAR_TURMAS()
+&& *************************************************************************************************************
+	
+*!*		SELECT("SCG_CAD_TURMA")
+*!*		SELECT * FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.codano = thisform.txtcodano.Value INTO CURSOR "cCfTurma"
+
+
+*!*		SELECT("SCG_CAD_TURMA")
+*!*		SELECT SCG_CAD_TURMA.*	,;
+*!*				SCG_CAD_TURMA.ANO+SCG_CAD_TURMA.NUMERO AS ANONUMERO	;
+*!*			FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.ATIVO=1 AND SCG_CAD_TURMA.codano = thisform.txtcodano.Value AND !DELETED() ORDER BY SCG_CAD_TURMA.cursoturma  INTO CURSOR "cCfCadTurma"
+		
+&& *************************************************************************************************************
+ENDFUNC
+&& *************************************************************************************************************
+
+
+&& FUNÇÃO PARA CARREGAR OS DIAS DA SEMANA NA COMBO BOX
 && *************************************************************************************************************
 FUNCTION SISCOLEGIO_CRIAR_CURSOR_PADRAO()
 && *************************************************************************************************************
 	
 	CREATE CURSOR cCfDiaSemana(	dia c(1)	,;
 								fds n(1) 	,;	
-								descricao c(35)  ) 
+								descricao c(30)  ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "1", 1 , "Domingo" ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "2", 0 , "Segunda-feira" ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "3", 0 , "Terça-feira" ) 
@@ -25,8 +43,6 @@ FUNCTION SISCOLEGIO_CRIAR_CURSOR_PADRAO()
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "6", 0 , "Sexta-feira" ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "7", 1 , "Sábado" ) 
 	
-	
-
 && *************************************************************************************************************
 ENDFUNC
 && *************************************************************************************************************
