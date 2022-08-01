@@ -8,21 +8,45 @@
 * ULTIMA ALTERAÇÃO....: 11/2021
 **********************************************************************************************************************************
 
-&& FUNÇÃO PARA GRAVAR O CABEÇALHO DOS RELATÓRIOS
+&& FUNÇÃO PARA CARREGAR OS DIAS DA SEMANA NA COMBO BOX
 && *************************************************************************************************************
-FUNCTION SISCOLEGIO_CARREGAR_TURMAS()
+FUNCTION SISCOLEGIO_CRIAR_CURSOR_PADRAO_MESES()
 && *************************************************************************************************************
 	
-	xAno = ALLTRIM(STR(YEAR(DATE())))
+	CREATE CURSOR cCfMeses(	mes 		c(01),;
+							descricao 	c(30) ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "1", "Janeiro" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "2", "Fevereiro" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "3", "Março" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "4", "Abril" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "5", "Maio" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "6", "Junho" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "7", "Julho" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "8", "Agosto" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "9", "Setembro" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "10", "Outubro" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "11", "Novembro" ) 
+	INSERT INTO cCfMeses( mes, descricao ) values( "12", "Dezembro" ) 
+	
+&& *************************************************************************************************************
+ENDFUNC
+&& *************************************************************************************************************
+
+&& FUNÇÃO PARA CARREGAR AS TURMAS
+&& *************************************************************************************************************
+FUNCTION SISCOLEGIO_CARREGAR_TURMAS(xCodAno)
+&& *************************************************************************************************************
+	
+	*xAno = ALLTRIM(STR(YEAR(DATE())))
 	
 	SELECT("SCG_CAD_TURMA")
-	SELECT * FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.codano = xAno INTO CURSOR "cCfTurma"
+	SELECT * FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.codano = xCodAno INTO CURSOR "cCfTurma"
 
 
 	SELECT("SCG_CAD_TURMA")
 	SELECT SCG_CAD_TURMA.*	,;
 			SCG_CAD_TURMA.ANO+SCG_CAD_TURMA.NUMERO AS ANONUMERO	;
-		FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.ATIVO=1 AND SCG_CAD_TURMA.codano = xAno AND !DELETED() ORDER BY SCG_CAD_TURMA.cursoturma  INTO CURSOR "cCfCadTurma"
+		FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.ATIVO=1 AND SCG_CAD_TURMA.codano = xCodAno AND !DELETED() ORDER BY SCG_CAD_TURMA.cursoturma  INTO CURSOR "cCfCadTurma"
 		
 && *************************************************************************************************************
 ENDFUNC
@@ -34,9 +58,9 @@ ENDFUNC
 FUNCTION SISCOLEGIO_CRIAR_CURSOR_PADRAO()
 && *************************************************************************************************************
 	
-	CREATE CURSOR cCfDiaSemana(	dia c(1)	,;
-								fds n(1) 	,;	
-								descricao c(30)  ) 
+	CREATE CURSOR cCfDiaSemana(	dia 		c(01),;
+								fds 		n(01),;	
+								descricao 	c(30) ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "1", 1 , "Domingo" ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "2", 0 , "Segunda-feira" ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "3", 0 , "Terça-feira" ) 

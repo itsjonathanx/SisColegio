@@ -8,19 +8,40 @@
 * ULTIMA ALTERAÇÃO....: 11/2021
 **********************************************************************************************************************************
 
-&& FUNÇÃO PARA GRAVAR O CABEÇALHO DOS RELATÓRIOS
+&& FUNÇÃO PARA CARREGAR OS DIAS DA SEMANA NA COMBO BOX
 && *************************************************************************************************************
-FUNCTION SISCOLEGIO_CARREGAR_TURMAS()
+FUNCTION SISCOLEGIO_CRIAR_CURSOR_PADRAO_MESES()
 && *************************************************************************************************************
 	
-*!*		SELECT("SCG_CAD_TURMA")
-*!*		SELECT * FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.codano = thisform.txtcodano.Value INTO CURSOR "cCfTurma"
+	CREATE CURSOR cCfMeses(	mes 		c(01),;
+							descricao 	c(30) ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "1", 1 , "Domingo" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "2", 0 , "Segunda-feira" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "3", 0 , "Terça-feira" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "4", 0 , "Quarta-feira" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "5", 0 , "Quinta-feira" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "6", 0 , "Sexta-feira" ) 
+	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "7", 1 , "Sábado" ) 
+	
+&& *************************************************************************************************************
+ENDFUNC
+&& *************************************************************************************************************
+
+&& FUNÇÃO PARA CARREGAR AS TURMAS
+&& *************************************************************************************************************
+FUNCTION SISCOLEGIO_CARREGAR_TURMAS(xCodAno)
+&& *************************************************************************************************************
+	
+	*xAno = ALLTRIM(STR(YEAR(DATE())))
+	
+	SELECT("SCG_CAD_TURMA")
+	SELECT * FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.codano = xCodAno INTO CURSOR "cCfTurma"
 
 
-*!*		SELECT("SCG_CAD_TURMA")
-*!*		SELECT SCG_CAD_TURMA.*	,;
-*!*				SCG_CAD_TURMA.ANO+SCG_CAD_TURMA.NUMERO AS ANONUMERO	;
-*!*			FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.ATIVO=1 AND SCG_CAD_TURMA.codano = thisform.txtcodano.Value AND !DELETED() ORDER BY SCG_CAD_TURMA.cursoturma  INTO CURSOR "cCfCadTurma"
+	SELECT("SCG_CAD_TURMA")
+	SELECT SCG_CAD_TURMA.*	,;
+			SCG_CAD_TURMA.ANO+SCG_CAD_TURMA.NUMERO AS ANONUMERO	;
+		FROM SCG_CAD_TURMA WHERE SCG_CAD_TURMA.ATIVO=1 AND SCG_CAD_TURMA.codano = xCodAno AND !DELETED() ORDER BY SCG_CAD_TURMA.cursoturma  INTO CURSOR "cCfCadTurma"
 		
 && *************************************************************************************************************
 ENDFUNC
@@ -32,9 +53,9 @@ ENDFUNC
 FUNCTION SISCOLEGIO_CRIAR_CURSOR_PADRAO()
 && *************************************************************************************************************
 	
-	CREATE CURSOR cCfDiaSemana(	dia c(1)	,;
-								fds n(1) 	,;	
-								descricao c(30)  ) 
+	CREATE CURSOR cCfDiaSemana(	dia 		c(01),;
+								fds 		n(01),;	
+								descricao 	c(30) ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "1", 1 , "Domingo" ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "2", 0 , "Segunda-feira" ) 
 	INSERT INTO cCfDiaSemana( dia, fds, descricao ) values( "3", 0 , "Terça-feira" ) 
